@@ -11,7 +11,7 @@
     }elseif ($kelas=="2A") {
         $query = mysql_query("SELECT tb_waktu.tahun x, SUM(tb_fakta.nilai_tiket) y FROM tb_fakta JOIN tb_kelas ON tb_fakta.id_kelas_tiket=tb_kelas.id_kelas_tiket JOIN tb_waktu ON tb_waktu.id_waktu=tb_fakta.id_waktu WHERE tb_kelas.id_kelas_tiket='2A' GROUP BY tb_kelas.id_kelas_tiket, tb_waktu.tahun");
     }elseif ($kelas=="EK") {
-        $query = mysql_query("SELECT tb_waktu.tahun x, SUM(tb_fakta.nilai_tiket) y FROM tb_fakta JOIN tb_kelas ON tb_fakta.id_kelas_tiket=tb_kelas.id_kelas_tiket JOIN tb_waktu ON tb_waktu.id_waktu=tb_fakta.id_waktu WHERE tb_kelas.id_kelas_tiket='EK' GROUP BY tb_kelas.id_kelas_tiket, tb_waktu.tahun");
+        $query = mysql_query("SELECT tb_waktu.tahun x, SUM(tb_fakta.nilai_tiket) y FROM tb_fakta JOIN tb_kelas ON tb_fakta.id_kelas_tiket=tb_kelas.id_kelas_tiket JOIN tb_waktu ON tb_waktu.id_waktu=tb_fakta.id_waktu WHERE tb_kelas.id_kelas_tiket='EK' GROUP BY tb_kelas.id_kelas_tiket, tb_waktu.bulan");
     }
 	$baris = mysql_num_rows($query);
 
